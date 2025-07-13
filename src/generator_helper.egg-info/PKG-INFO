@@ -1,8 +1,0 @@
-Metadata-Version: 2.4
-Name: generator-helper
-Version: 0.1.0
-Summary: A helper module for test case generation and validation
-Author: ericshen19555
-Author-email: ericshen19555 <ericshen19555@gmail.com>
-Requires-Python: >=3.8
-Requires-Dist: func-timeout>=4.3.5
