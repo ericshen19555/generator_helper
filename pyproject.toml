@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "generator-helper"
+version = "0.1.0"
+description = "A helper module for test case generation and validation"
+authors = [
+    { name = "ericshen19555", email = "ericshen19555@gmail.com" }
+]
+dependencies = [
+    "func-timeout>=4.3.5"
+]
+requires-python = ">=3.8"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
