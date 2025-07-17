@@ -83,7 +83,7 @@ def assert_testcase(statement: SupportsBool, msg: Any = "", *, from_: Optional[E
 
 def generator_runner(generator: Callable[[int, Random], str],
                      verifier: Callable[[int, str], str | NoReturn],
-                     retry_limit: Optional[int] = -1) -> Callable[[int], tuple[str, str] | NoReturn]:
+                     retry_limit: int = -1) -> Callable[[int], tuple[str, str] | NoReturn]:
     """
     Creates a runner function that generates and verifies a test case.
 

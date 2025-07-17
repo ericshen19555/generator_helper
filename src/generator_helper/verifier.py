@@ -8,7 +8,7 @@ based on expected outcomes (Accepted, Wrong Answer, Time Limit Exceeded,
 Runtime Error).
 """
 
-from typing import Callable, NoReturn, Literal, Optional, Union
+from typing import Callable, NoReturn, Literal, Union
 from operator import eq
 
 from func_timeout import func_set_timeout
@@ -55,7 +55,7 @@ def _truncate_repr(text: str, max_len: int = 50) -> str:
 
 
 def verifier_factory(expected: ExpectedResults,
-                     *, equal: Optional[Callable] = eq, timeout: float = 1.0):
+                     *, equal: Callable = eq, timeout: float = 1.0):
     """
     Factory function to create a tailored verifier function.
 
