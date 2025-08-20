@@ -21,7 +21,8 @@ def write_testcases(
     folder: Optional[Path] = None,
     testcases: Iterable[tuple[str, str]],
     in_pattern: str = DEFAULT_IN_PATTERN,
-    out_pattern: str = DEFAULT_OUT_PATTERN
+    out_pattern: str = DEFAULT_OUT_PATTERN,
+    start: int = 1
 ) -> None:
     """
     Write input/output test cases to files in the specified folder.
@@ -38,6 +39,7 @@ def write_testcases(
         testcases: An iterable of (input_str, output_str) pairs.
         in_pattern: A pattern for naming input files (must include '{index}').
         out_pattern: A pattern for naming output files (must include '{index}').
+        start: The starting index for naming files, default to 1.
 
     Notes:
         If patterns are invalid or collide, warns and falls back to default patterns:
@@ -69,7 +71,7 @@ def write_testcases(
     folder = Path(folder)
     folder.mkdir(parents=True, exist_ok=True)
 
-    for idx, (input_data, expected) in enumerate(testcases, start=1):
+    for idx, (input_data, expected) in enumerate(testcases, start=start):
         # Generate filenames
         in_name = in_pattern.format(index=idx)
         out_name = out_pattern.format(index=idx)
